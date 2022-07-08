@@ -23,14 +23,10 @@
 </head>
 <body class="d-flex flex-column h-100">
 <th:block th:replace="fragments/header::header"></th:block>
-<main class="flex-shrink-0">
-    <div class="container">
-        <th:block layout:fragment="content">
 
 
-        </th:block>
-    </div>
-</main>
+<th:block layout:fragment="content"></th:block>
+
 
 <th:block th:replace="fragments/footer::footer"></th:block>
 </body>
