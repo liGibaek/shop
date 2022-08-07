@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layouts/layout1}">
+      layout:decorate="~{layouts/layout}">
 
 <head>
     <title>로그인</title>
@@ -37,14 +37,9 @@
         <form role="form" method="post" action="/members/login">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
-            <div class="form-floating">
-                <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
-            </div>
-            <div class="form-floating">
-                <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-            </div>
+            <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+            <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+
             <p th:if="${loginErrorMsg}" class="error" th:text="${loginErrorMsg}"></p>
             <div class="checkbox mb-3">
                 <label>
