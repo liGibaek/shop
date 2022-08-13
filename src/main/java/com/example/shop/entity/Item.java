@@ -1,20 +1,25 @@
 package com.example.shop.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.Table;
 import com.example.shop.constant.ItemSellStatus;
-import com.example.shop.constant.OrderStatus;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.*;
-import java.time.LocalDateTime;
-
 @Entity
-@Table(name="item")
+@Table(name = "item")
 @Getter
 @Setter
 @ToString
-public class Item extends BaseEntity{
+public class Item extends BaseEntity {
     @Id
     @Column(name = "item_id")
     @GeneratedValue(strategy = GenerationType.AUTO)

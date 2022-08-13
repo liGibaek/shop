@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter@Setter
+@Getter @Setter
 public class ItemFormDto {
 
     private Long id;
@@ -20,14 +20,14 @@ public class ItemFormDto {
     @NotBlank(message = "상품명은 필수 입력 값입니다.")
     private String itemNm;
 
-    @NotBlank(message = "이름은 필수 입력 값입니다.")
+    @NotNull(message = "가격은 필수 입력 값입니다.")
+    private Integer price;
+
+    @NotBlank(message = "상품 상세는 필수 입력 값입니다.")
     private String itemDetail;
 
     @NotNull(message = "재고는 필수 입력 값입니다.")
     private Integer stockNumber;
-
-    @NotNull(message = "가격은 필수 입력 값입니다.")
-    private Integer price;
 
     private ItemSellStatus itemSellStatus;
 
@@ -42,6 +42,6 @@ public class ItemFormDto {
     }
 
     public static ItemFormDto of(Item item){
-        return modelMapper.map(item, ItemFormDto.class);
+        return modelMapper.map(item,ItemFormDto.class);
     }
 }
